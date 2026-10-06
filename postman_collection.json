@@ -1,0 +1,91 @@
+{
+	"info": {
+		"name": "API Usuario Tokenizado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Obtener 10 Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "users"]
+				}
+			}
+		},
+		{
+			"name": "2. Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pablo\",\n    \"email\": \"pablo@example.com\",\n    \"password\": \"12345678\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/register",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "users", "register"]
+				}
+			}
+		},
+		{
+			"name": "3. Iniciar Sesión",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"pablo@example.com\",\n    \"password\": \"12345678\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/login",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "users", "login"]
+				}
+			}
+		},
+		{
+			"name": "4. Actualizar Nombre",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"AQUI_TU_TOKEN_OBTENIDO\",\n    \"name\": \"Nuevo Nombre\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/update-name",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "users", "update-name"]
+				}
+			}
+		}
+	]
+}
